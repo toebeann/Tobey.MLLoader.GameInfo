@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using System;
 using Tobey.MLLoader.GameInfo.Utility;
 
 namespace Tobey.MLLoader.GameInfo.ExtensionMethods;
