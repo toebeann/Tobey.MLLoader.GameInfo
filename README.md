@@ -4,7 +4,7 @@ A simple patch to ensure the game info logs of [BepInEx.MelonLoader.Loader](http
 
 ## Why?
 
-It's nice to have the correct game info in the logs, it's useful for troubleshooting.
+It's nice to have the correct game info in the logs; it's useful for troubleshooting.
 
 Unfortunately, the version of MelonLoader shipped with BepInEx.MelonLoader.Loader uses [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET) to parse the info from the `globalgamemanagers` file manually, which is only going to work correctly assuming the version of AssetsTools.NET installed has up-to-date information on how to parse that file, which it often does not. This leads to incorrect information sometimes being parsed from the file.
 
