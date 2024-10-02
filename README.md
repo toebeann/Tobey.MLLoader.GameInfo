@@ -8,7 +8,7 @@ It's nice to have the correct game info in the logs, it's useful for troubleshoo
 
 Unfortunately, the version of MelonLoader shipped with BepInEx.MelonLoader.Loader uses [AssetsTools.NET](https://github.com/nesrak1/AssetsTools.NET) to parse the info from the `globalgamemanagers` file manually, which is only going to work correctly assuming the version of AssetsTools.NET installed has up-to-date information on how to parse that file, which it often does not. This leads to incorrect information sometimes being parsed from the file.
 
-To address this, Tobey.MLLoader.GameInfo relies on Unity's own API for gathering the same information, which is available since at least Unity 5.6. Of course, this relies on Unity to have been initialised far enough to have parsed this information itself. This only works as long as MelonLoader is gathering the info after Unity has been initialised enough to have parsed it, which it usually is by the time BepInEx.MelonLoader.Loader is loaded.
+To address this, Tobey.MLLoader.GameInfo relies on Unity's own API for gathering the same information, which is available since at least Unity 5.6. Of course, this relies on Unity to have been initialised far enough to have parsed this information itself, and only works as long as MelonLoader is gathering the info after that has happened, which is usually the case by the time BepInEx.MelonLoader.Loader is loaded.
 
 ## Usage
 
