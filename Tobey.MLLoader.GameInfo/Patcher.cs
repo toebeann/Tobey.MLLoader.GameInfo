@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Tobey.MLLoader.GameInfo.ExtensionMethods;
 
 namespace Tobey.MLLoader.GameInfo;
 
@@ -47,7 +48,7 @@ public static class Patcher
             var unityInformationHandler = Traverse.CreateWithType("MelonLoader.InternalUtils.UnityInformationHandler");
             var application = Traverse.CreateWithType("UnityEngine.Application");
 
-            var getValue = (string name) => application.Property(name) switch
+            var getValue = (string name) => application.OptionalProperty(name) switch
             {
                 Traverse t when t.PropertyExists() => t.GetValue<string>(),
                 _ => application.Field<string>(name).Value,
